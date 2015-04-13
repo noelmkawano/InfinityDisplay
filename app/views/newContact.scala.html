@@ -1,0 +1,60 @@
+@(contactForm: Form[views.formdata.ContactFormData])
+
+@import views.html.helper._
+
+@Main("newContact") {
+  <div class="space"></div>
+  <div class="container2">
+  @form(routes.Application.postContact(), 'class -> "form-horizontal") {
+    <div class="form-group">
+      <label for="inputeq3" class="col-sm-4 control-label">Equalizer</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"
+          name="@contactForm("eq").name"
+          id="@contactForm("eq").id"
+          value="@contactForm("eq").value"
+        placeholder="1-255">
+      </div>
+      <dive class="col-sm-4"></dive>
+    </div>
+    <div class="form-group">
+      <label for="inputwave3" class="col-sm-4 control-label">Wave Form</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"
+        name="@contactForm("wave").name"
+        id="@contactForm("wave").id"
+        value="@contactForm("wave").value"
+        placeholder="1-255">
+      </div>
+      <dive class="col-sm-4"></dive>
+    </div>
+    <div class="form-group">
+      <label for="inputsen" class="col-sm-4 control-label">Sensitivity</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"
+        name="@contactForm("sen").name"
+        id="@contactForm("sen").id"
+        value="@contactForm("sen").value"
+        placeholder="1-50">
+      </div>
+      <dive class="col-sm-4"></dive>
+    </div>
+    <div class="form-group">
+      <label for="inputtrail" class="col-sm-4 control-label">Trail</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"
+        name="@contactForm("trail").name"
+        id="@contactForm("trail").id"
+        value="@contactForm("trail").value"
+        placeholder="1-255">
+      </div>
+      <dive class="col-sm-4"></dive>
+    </div>
+    <div class="form-group text-center">
+      <div class="col-sm-12">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  }
+  </div>
+}

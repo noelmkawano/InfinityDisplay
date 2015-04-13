@@ -1,3 +1,83 @@
 body {
-  padding-top: 70px;  /* Move body of page below navbar. */
+  background-image: url('../images/white.jpg');
+  background-position: top;
+  color: white;
+}
+
+
+h1 {
+  padding-top: 20px;
+  padding-left: 80px;
+  margin-top: 0;
+  color: white;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-image: none;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: transparent;
+}
+
+p {
+  color: white;
+  padding-top: 60px;
+  padding-left: 80px;
+}
+
+h2 {
+  font-size: 100px;
+  text-align: center;
+  margin-top: 0;
+  color: white;
+}
+
+.infanimation {
+  text-align: center;
+}
+
+h3 {
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.btn {
+  padding: 24px 24px;
+  font-size: 36px;
+  border-radius: 50px;
+}
+
+.space {
+  padding-top: 300px;
+}
+
+.container2 {
+  padding-top: 50px;
+  padding-bottom: 25px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.col-sm-offset-2 {
+  margin-left: 0;
+}
+
+.tagline {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.form-group {
+  font-size: 20px;
 }
