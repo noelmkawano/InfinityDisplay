@@ -1,6 +1,6 @@
 # The Infinity Display
 
-<img src="IMG_20150413_081353.jpg" width="500px"/>
+<img src="C:/Users/NOEL/Documents/GitHub/InfinityDisplay/public/images/IMG_20150413_081353.jpg" width="500px"/>
 
 ## Overview
 
