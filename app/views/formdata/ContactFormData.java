@@ -4,12 +4,21 @@ package views.formdata;
  * The backing class for the Contact form.
  */
 public class ContactFormData {
-  /** The first name. */
+  /**
+   * The equalizer value.
+   */
   public String eq;
-  /** The last name. */
+  /**
+   * The wave form value.
+   */
   public String wave;
-  /** The telephone number in xxx-xxx-xxxx format. */
+  /**
+   * The sensitivity value.
+   */
   public String sen;
+  /**
+   * The trail value.
+   */
   public String trail;
 
 }

@@ -16,6 +16,11 @@ import java.io.IOException;
 public class Application extends Controller {
 
 
+  /**
+   * Creates a text file to send parameter data to processing.
+   *
+   * @param textToWrite send the variables to the text file.
+   */
   private static void writeToFile(String textToWrite) {
     final String outputPath = "C:\\Users\\NOEL\\Desktop\\Data.txt";
 
@@ -24,7 +29,8 @@ public class Application extends Controller {
       fileWriter.write(textToWrite);
       fileWriter.close();
       System.out.println("Success!");
-    } catch (IOException e) {
+    }
+    catch (IOException e) {
       System.out.println(e.getMessage());
     }
   }
@@ -51,6 +57,7 @@ public class Application extends Controller {
 
   /**
    * Returns a postContact.
+   *
    * @return the postContact.
    */
   public static Result postContact() {

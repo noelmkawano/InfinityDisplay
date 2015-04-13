@@ -1,6 +1,6 @@
-# ics-play-bootstrap
+# The Infinity Display
 
-<img src="ics-play-bootstrap-home.png" width="500px"/>
+<img src="IMG_20150413_081353.jpg" width="500px"/>
 
 ## Overview
 
