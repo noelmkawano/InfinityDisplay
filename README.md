@@ -36,3 +36,8 @@ The Infinity Display provides the following features:
 
 Play 2.3.7, Bootstrap 3.3.2
 
+## Wiki Pages
+
+[User Guide](https://github.com/noelmkawano/InfinityDisplay/wiki/User-Guide)
+[Developer Guide](https://github.com/noelmkawano/InfinityDisplay/wiki/Developer-Guide)
+[Contact Us](https://github.com/noelmkawano/InfinityDisplay/wiki/Contact-Us)
