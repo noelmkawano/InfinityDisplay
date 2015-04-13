@@ -4,28 +4,27 @@
 
 ## Overview
 
-This is a revised version of the Activator 'play-java' template system which:
+This is a web application that collects parameter values for a LED display.
 
-  * Conforms to the ICS software engineering coding standards
+The current version will ask a user for four values:
 
-  * Illustrates how to incorporate Twitter Bootstrap 3 into Play.
+  * Equalizer opacity
+  * Wave form opacity
+  * Sound reactive sensitivity
+  * Trail effect intensity
 
-To use it, first create an empty GitHub repo and clone to your desktop.
+These values are then packaged into a text file that is then read by the device driving the LEDs.
 
-Next, cd into your new repo and set ics-play-bootstrap as the upstream master:
+To use this, the user must have both intelliJ and Processing installed.
 
-    git remote add upstream https://github.com/ics613s15/ics-play-bootstrap.git
+A physical LED display is not required to develop code for this project.
 
-Next, merge the contents of ics-play-bootstrap into your new empty repo:
-
-    git fetch upstream
-    git merge upstream/master
-
-Now your repo will contain the ics-play-bootstrap repo.
-
-Edit the build.sbt file to change the name to your new project.
+Animations are simulated using a Processing GUI.
 
 ## Features
+
+The Infinity Display provides the following features:
+
 
 ics-play-bootstrap provides the following features:
 
