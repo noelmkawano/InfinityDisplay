@@ -13,7 +13,7 @@ The current version will ask a user for four values:
   * Sound reactive sensitivity
   * Trail effect intensity
 
-<img src="submitpage.jpg" width="500px"/>
+<img src="submitpage.JPG" width="500px"/>
 
 These values are then packaged into a text file that is then read by the device driving the LEDs.
 
