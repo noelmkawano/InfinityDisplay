@@ -4,15 +4,37 @@
 
 ## Overview
 
-An infinity mirror is an optical illusion created by two parallel mirrors reflecting light between each other. This can be typically found in restrooms. Infinity mirrors is a common project for DIY hobbyists and was my first project as a college student.
+This is a web application that collects parameter values for a LED display.
 
-A LED matrix is an array of lights similar to a TV, but with a low pixel density. Like a TV, we are able to map images and animations to the display. This is also very popular with hobbyist, but never pursued on the large scale because of the cost.
+The current version will ask a user for four values:
 
-The Infinity Display is a combination of these two subjects. The parallel mirrors lay on the frame with a LED display as a back light. The light from the LEDs become trapped between the mirrors and create the tunneling optical illusion of an infinity mirror.
+  * Equalizer opacity
+  * Wave form opacity
+  * Sound reactive sensitivity
+  * Trail effect intensity
 
-As an engineer creating these systems come easy, but it is only have the battle. The display will only work if it has software to back it up! The goal of this repository is to create a simple UI to give my creation an interactive touch to multiple participants.
+<img src="submitpage.JPG" width="500px"/>
 
-The party is just getting started!
+These values are then packaged into a text file that is then read by the device driving the LEDs.
+
+To use this, the user must have both IntelliJ and Processing installed.
+
+A physical LED display is not required to develop code for this project.
+
+Animations can be simulated using a Processing GUI.
+
+## Features
+
+The Infinity Display provides the following features:
+
+  * Visual and interactive stimulation
+  * Communication between two programs
+  * Remote access
+  * Blindness
+
+## Version information
+
+Play 2.3.7, Bootstrap 3.3.2
 
 ## Wiki Pages
 
