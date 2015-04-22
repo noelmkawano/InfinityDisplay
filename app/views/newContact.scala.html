@@ -4,6 +4,16 @@
 
 @Main("newContact") {
   <div class="space"></div>
+  <div class="col-sm-6">
+  <container3>
+  <div align="center" class="embed-responsive embed-responsive-16by9">
+    <video autoplay loop class="embed-responsive-item">
+      <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
+    </video>
+  </div>
+    </container3>
+    </div>
+  <div class="col-sm-6">
   <div class="container2">
   @form(routes.Application.postContact(), 'class -> "form-horizontal") {
     <div class="form-group">
@@ -64,5 +74,6 @@
       </div>
     </div>
   }
+  </div>
   </div>
 }
