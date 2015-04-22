@@ -1,13 +1,10 @@
-@(message: String)
+@(contacts: List[Contact])
 
 @Main("Home") {
-  <div class="space"></div>
-  <div align="center" class="embed-responsive embed-responsive-16by9">
-    <video autoplay loop class="embed-responsive-item">
-      <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
-    </video>
-  </div>
-  <div class="tagline text-center">
-    <a href="@routes.Application.newContact()"><h2>Control the Party</h2></a>
+  <div class="container">
+    <div class="space"></div>
+    <div class="tagline text-center">
+      <a href="@routes.Application.newContact()"><h2>Join a Party</h2></a>
+    </div>
   </div>
 }

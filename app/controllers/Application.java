@@ -1,39 +1,22 @@
 package controllers;
 
+import models.ContactDB;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.formdata.ContactFormData;
+import views.formdata.DietTypes;
+import views.formdata.TelephoneTypes;
+import views.html.History;
 import views.html.Index;
-import views.html.newContact;
+import views.html.NewContact;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.Map;
 
 /**
  * Provides controllers for this application.
  */
 public class Application extends Controller {
-
-
-  /**
-   * Creates a text file to send parameter data to processing.
-   *
-   * @param textToWrite send the variables to the text file.
-   */
-  private static void writeToFile(String textToWrite) {
-    final String outputPath = "C:\\Users\\NOEL\\Desktop\\Data.txt";
-
-    try {
-      FileWriter fileWriter = new FileWriter(outputPath);
-      fileWriter.write(textToWrite);
-      fileWriter.close();
-      System.out.println("Success!");
-    }
-    catch (IOException e) {
-      System.out.println(e.getMessage());
-    }
-  }
 
   /**
    * Returns the home page.
@@ -41,32 +24,62 @@ public class Application extends Controller {
    * @return The resulting home page.
    */
   public static Result index() {
-    return ok(Index.render("Welcome to the home page."));
+    return ok(Index.render(ContactDB.getContacts()));
   }
 
   /**
-   * Returns newContact, a simple example of a second page to illustrate navigation.
+   * Returns the home page.
    *
-   * @return The newContact.
+   * @return The resulting home page.
    */
-  public static Result newContact() {
-    Form<ContactFormData> formData = Form.form(ContactFormData.class);
-    return ok(newContact.render(formData));
-
+  public static Result history() {
+    return ok(History.render(ContactDB.getContacts()));
   }
 
   /**
-   * Returns a postContact.
+   * Renders the newContact page with a form to add new contacts if the ID is 0; otherwise updates the existing contact.
    *
-   * @return the postContact.
+   * @param id The ID value passed in.
+   * @return The newContact page.
+   */
+  public static Result newContact(long id) {
+    ContactFormData data = (id == 0) ? new ContactFormData() : new ContactFormData(ContactDB.getContact(id));
+    Form<ContactFormData> formData = Form.form(ContactFormData.class).fill(data);
+    Map<String, Boolean> telephoneTypeMap = TelephoneTypes.getTypes(data.telephoneType);
+    Map<String, Boolean> dietTypes = DietTypes.getDietTypes(data.dietTypes);
+    return ok(NewContact.render(formData, telephoneTypeMap, dietTypes));
+  }
+
+  /**
+   * Renders the index page with the given record deleted from the in-memory database.
+   *
+   * @param id The ID value passed in.
+   * @return The Index page.
+   */
+  public static Result deleteContact(long id) {
+    ContactDB.deleteContact(id);
+    return ok(Index.render(ContactDB.getContacts()));
+  }
+
+  /**
+   * Handles the request to post form data from the newContact page.
+   *
+   * @return The newContact page, either with errors or with form data.
    */
   public static Result postContact() {
     Form<ContactFormData> formData = Form.form(ContactFormData.class).bindFromRequest();
-    ContactFormData data = formData.get();
-    System.out.printf("Got data: %s %s %s %s %n", data.eq, data.wave, data.sen, data.trail);
-    writeToFile(data.eq + "\n" + data.wave + "\n" + data.sen + "\n" + data.trail);
-    return ok(newContact.render(formData));
+    if (formData.hasErrors()) {
+      System.out.println("HTTP Form Error.");
+      return badRequest(NewContact.render(formData, TelephoneTypes.getTypes(), DietTypes.getDietTypes()));
+    }
+    else {
+      ContactFormData data = formData.get();
+      ContactDB.addContacts(data);
+      System.out.printf("HTTP OK; Form Data:  %s, %s, %s, %s %n", data.firstName, data.lastName, data.telephone,
+          data.telephoneType);
+      System.out.println(data.dietTypes);
+      return ok(NewContact.render(formData, TelephoneTypes.getTypes(data.telephoneType),
+          DietTypes.getDietTypes(data.dietTypes)));
+    }
   }
-
-
 }

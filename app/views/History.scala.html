@@ -1,0 +1,36 @@
+@(contacts: List[Contact])
+
+@Main("Home") {
+  <div class="space"></div>
+  <div class="shade">
+    <div class="container">
+      <h1>Past Requests</h1>
+
+
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Animation</th>
+            <th>Opacity</th>
+            <th>Gain</th>
+            <th>Reactivity</th>
+          </tr>
+        </thead>
+        <tbody>
+        @for(contact <- contacts) {
+          <tr>
+            <td>@contact.getTelephone</td>
+            <td>@contact.getTelephoneType().getTelephoneType()</td>
+            <td>@contact.getFirstName</td>
+            <td>@contact.getLastName</td>
+            <td>@contact.getDietTypesString</td>
+            <td><a href="@routes.Application.newContact(contact.getId)" class="btn btn-warning btn-xs" role="button">Edit</a></td>
+            <td><a href="@routes.Application.deleteContact(contact.getId)" class="btn btn-danger btn-xs" role="button">Delete</a></td>
+          </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </div>
+}
