@@ -1,5 +1,7 @@
 # The Infinity Display
 
+![](https://github.com/noelmkawano/InfinityDisplay/blob/master/doc/hard.jpg)
+
 ## Welcome to the InfinityDisplay wiki!
 
 My name is Noel Kawano and I am the creator of the Infinity Display! This piece of hardware incorporates two subjects, infinity mirrors and light emitting diode (LED) matrices.
