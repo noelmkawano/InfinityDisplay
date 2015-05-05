@@ -33,7 +33,7 @@ public class NewContact extends FluentPage {
 
   @Override
   public void isAt() {
-    assertThat(title()).isEqualTo("NewContact - digits");
+    assertThat(title()).isEqualTo("NewContact - Infinity");
   }
 
   /**

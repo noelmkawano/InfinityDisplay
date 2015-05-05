@@ -32,7 +32,7 @@ public class IndexPage extends FluentPage {
 
   @Override
   public void isAt() {
-    assertThat(title()).isEqualTo("Home - digits");
+    assertThat(title()).isEqualTo("Home - Infinity");
   }
 
   /**
